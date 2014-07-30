@@ -38,18 +38,16 @@ void BigchunkModel::ModelData::load(Herbs::StreamIn& source)
 		if(n_frames)
 			{
 			if(header_name=="VERTICES")
-				{
+				{				
 				uint32_t n;
 				reader.dataRead(&n,sizeof(n));
-				printf("Number of vertices: %d\n",n);
 				m_vertices.lengthValidSet(3*n);
 				reader.dataRead(m_vertices.begin(),sizeof(float)*3*n);
 				}
 			if(header_name=="NORMALS")
-				{
+				{				
 				uint32_t n;
 				reader.dataRead(&n,sizeof(n));
-				printf("Number of normals: %d\n",n);
 				m_normals.lengthValidSet(3*n);
 				reader.dataRead(m_normals.begin(),sizeof(float)*3*n);
 				}
@@ -57,8 +55,7 @@ void BigchunkModel::ModelData::load(Herbs::StreamIn& source)
 				{
 				uint32_t n;
 				reader.dataRead(&n,sizeof(n));
-				printf("Number of uvcoords: %d\n",n);
-				m_normals.lengthValidSet(2*n);
+				m_uvcoords.lengthValidSet(2*n);
 				reader.dataRead(m_uvcoords.begin(),sizeof(float)*2*n);
 				}
 			}
