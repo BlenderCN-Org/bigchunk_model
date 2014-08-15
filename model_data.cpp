@@ -3,13 +3,13 @@ target[name[model_data.o] type[object]]
 #endif
 
 #include "model_data.h"
-#include <chunkio/bigchunk_reader.h>
+#include <bigchunk/reader.h>
 #include <herbs/stringbase/stringbase.h>
 #include <herbs/exceptionmissing/exceptionmissing.h>
 
 void BigchunkModel::ModelData::load(Herbs::StreamIn& source)
 	{
-	ChunkIO::BigchunkReader reader(source);
+	Bigchunk::Reader reader(source);
 	
 	Herbs::Stringbase<char> header_name(8);
 	size_t status=0;
