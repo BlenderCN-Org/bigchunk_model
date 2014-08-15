@@ -6,4 +6,4 @@ A simple model loader + blender 2.7 exporter
 Dependencies
 ------------
 * gabi
-* ChunkIO
+* bigchunk
